@@ -1,28 +1,21 @@
 package pl.dolega;
 
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
+
 
 public class App {
 
-
     public static void main(String[] args) {
 
-        ArrayList<String> list = new ArrayList<>();
-        System.out.println("Enter integers:");
+        GraphCounter graphCounter = new GraphCounter();
 
-        Scanner scanner = new Scanner(System.in);
+        String input = graphCounter.getInput();
 
-        String line;
-        do {
-            line = scanner.nextLine();
-            list.add(line);
-        } while (!line.equals(""));
+        graphCounter.run(input);
 
-        list.remove("");
-
-        System.out.println(list);
+        System.out.println("\nfinal number of graphs: " + graphCounter.numberOfGraphs);
 
     }
+
 }
